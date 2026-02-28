@@ -6,16 +6,8 @@ const errorHandler = require('./middlewares/errorHandler');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// 허용할 origin 목록
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://todoappdj-26.netlify.app'
-];
-
-// 미들웨어
-app.use(cors({
-  origin: allowedOrigins
-}));
+// 미들웨어 - 모든 origin 허용
+app.use(cors());
 app.use(express.json());
 
 // 라우트
